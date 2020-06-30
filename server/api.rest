@@ -12,13 +12,54 @@ Content-Type: {{contentType}}
     "password": "12345678"
 }
 
+
 ### Create an Account
 
 POST {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-    "email": "lbc9@gmail.com",
+    "email": "lbc92@gmail.com",
     "password": "12345678",
     "password_confirmation": "12345678"
 }
+
+
+### List Links
+
+GET {{baseUrl}}/link
+Content-Type: {{contentType}}
+
+
+### Get a Link by Id
+
+GET {{baseUrl}}/link/1
+Content-Type: {{contentType}}
+
+
+### Create Link
+
+POST {{baseUrl}}/link
+Content-Type: {{contentType}}
+
+{
+    "label": "Google",
+    "url": "https://google.com",
+    "isSocial": false
+}
+
+
+### Update a Link
+
+PUT {{baseUrl}}/link/2
+Content-Type: {{contentType}}
+
+{
+    "label": "Google",
+    "url": "https://google.com"
+
+}
+
+### Delete a Link
+DELETE {{baseUrl}}/link/1
+Content-Type: {{contentType}}
