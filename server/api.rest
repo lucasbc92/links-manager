@@ -2,7 +2,7 @@
 
 @contentType = application/json
 
-### Get Shit Done
+### Test Get
 
 GET {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
