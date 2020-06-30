@@ -1,7 +1,7 @@
 const messages = require('../config/messages.json');
 const { getMessage } = require('./messages');
 
-const getAuthError = (error) => {
+const getSignUpError = (error) => {
     if(!error) return null;
 
     const errorMessages = {};
@@ -29,4 +29,4 @@ const getAuthError = (error) => {
     return errorMessages;
 }
 
-module.exports = { getAuthError }
+module.exports = { getSignUpError }

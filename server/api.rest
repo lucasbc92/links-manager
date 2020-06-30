@@ -2,13 +2,13 @@
 
 @contentType = application/json
 
-### Test Get
+### Sign In
 
-GET {{baseUrl}}/auth/sign-up
+POST {{baseUrl}}/auth/sign-in
 Content-Type: {{contentType}}
 
 {
-    "email": "lbc93@hotmail.com",
+    "email": "lbc92@hotmail.com",
     "password": "12345678"
 }
 
@@ -18,7 +18,7 @@ POST {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-    "email": "lbc92@gmail.com",
+    "email": "lbc9@gmail.com",
     "password": "12345678",
     "password_confirmation": "12345678"
 }
