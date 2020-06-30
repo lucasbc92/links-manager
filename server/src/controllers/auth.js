@@ -15,15 +15,7 @@ router.get('/sign-in', (request, response) => {
 router.get('/sign-up', async (request, response) => {
     const {email, password} = request.body;
 
-    return response.json({email, password});
-
-    const hash = bcrypt.hashSync(password, saltRounds)
-    const result = await Account.create({
-        email,
-        password: hash
-    })
-
-    return response.json(result);
+    return response.jsonOK({email, password});
 })
 
 router.post('/sign-up', async (request, response) => {
@@ -44,14 +36,12 @@ router.post('/sign-up', async (request, response) => {
     } catch(err) {
         if (err.name === 'SequelizeUniqueConstraintError') {
             console.log(err.errors[0].message);
-            return response.json({
-                error: "Email is already registered."
-            });
+            return response.jsonBadRequest(err, "Email is already registered.");
         }
-        return response.json(err);
+        return response.jsonBadRequest(err, err.name);
     }  
 
-    return response.json(result);
+    return response.jsonOK(result, 'Account created.');
 })
 
 module.exports = router;

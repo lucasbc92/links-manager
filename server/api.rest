@@ -2,12 +2,22 @@
 
 @contentType = application/json
 
+### Get Shit Done
+
+GET {{baseUrl}}/auth/sign-up
+Content-Type: {{contentType}}
+
+{
+    "email": "lbc93@hotmail.com",
+    "password": "123456"
+}
+
 ### Create an Account
 
 POST {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-    "email": "lbc93@hotmail.com",
+    "email": "lbc96@hotmail.com",
     "password": "123456"
 }
