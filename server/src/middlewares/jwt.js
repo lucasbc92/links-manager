@@ -1,4 +1,4 @@
-const { verifyJwt } = require('../helpers/jwt')
+const { verifyJwt, getTokenFromHeaders } = require('../helpers/jwt')
 
 const checkJwt = (request, response, next) => {
 
@@ -7,14 +7,13 @@ const checkJwt = (request, response, next) => {
     const excludedPaths = [
         '/auth/sign-in',
         '/auth/sign-up',
+        '/auth/refresh'
     ];
 
     const isExcluded = !!excludedPaths.find(p => p.startsWith(path)); //transforma o valor para booleano
     if(isExcluded) return next(); //ignora a verificação de token dos excludedPaths
 
-    let token = request.headers['authorization'];
-    token = token ? token.slice(7,token.length) : null;
-    //para eliminar o 'Bearer ' da string de token
+    const token = getTokenFromHeaders(request.headers);
 
     if(!token) {
         return response.jsonUnauthorized(null, 'Invalid token');
