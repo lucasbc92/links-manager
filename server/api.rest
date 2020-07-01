@@ -2,7 +2,7 @@
 
 @contentType = application/json
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU5MzU2NzI4OSwiZXhwIjoxNTkzNTY5MDg5fQ.LkbBuiqZoK5xU0n8UgS-aL1btbWg9eQG8Z1QxDs_vHw
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTkzNjMxMjY3LCJleHAiOjE1OTM2MzMwNjd9.Qf_cG0u85Jkn441jH9KpMQRZrqtJDNUl5xkWzv8b1zg
 
 ### Create an Account
 
@@ -19,7 +19,6 @@ Content-Type: {{contentType}}
 
 POST {{baseUrl}}/auth/sign-in
 Content-Type: {{contentType}}
-Authorization: Bearer {{token}}
 
 {
     "email": "lbc92@gmail.com",
