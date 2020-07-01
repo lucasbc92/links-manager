@@ -5,8 +5,7 @@ const { Link } = require('../models'); //same as db.Account
 const router = express.Router();
 
 router.get('/', async (request, response) => {
-    //const accountId = request.id;
-    const accountId = 1;
+    const {accountId}  = request;
     
     const links = await Link.findAll({where: {accountId}});
     
@@ -15,8 +14,7 @@ router.get('/', async (request, response) => {
 
 router.get('/:id', async (request, response) => {
     const { id } = request.params;
-    //const accountId = request.id;
-    const accountId = 1;
+    const {accountId}  = request;
     
     const link = await Link.findOne({
         where: {id, accountId}
@@ -28,8 +26,7 @@ router.get('/:id', async (request, response) => {
 });
 
 router.post('/', async (request, response) => {
-    //const accountId = request.id;
-    const accountId = 1;
+    const {accountId}  = request;
 
     const {
         label,
@@ -53,8 +50,7 @@ router.post('/', async (request, response) => {
 
 router.put('/:id', async (request, response) => {
     const { id } = request.params;
-    //const accountId = request.id;
-    const accountId = 1;
+    const {accountId}  = request;
 
     const { body } = request;
     const fields = ['label', 'url', 'isSocial'];
@@ -77,8 +73,7 @@ router.put('/:id', async (request, response) => {
 
 router.delete('/:id', async (request, response) => {
     const { id } = request.params;
-    //const accountId = request.id;
-    const accountId = 1;
+    const {accountId}  = request;
     
     const link = await Link.findOne({
         where: {id, accountId}
