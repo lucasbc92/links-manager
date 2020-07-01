@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <BrowserRouter>
+            <div>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/sign-in">Sign In</Link></li>
+                        <li><Link to="/sign-up">Sign Up</Link></li>
+                        <li><Link to="/manage/links/create">Create Link</Link></li>
+                        <li><Link to="/manage/links/edit">Edit Link</Link></li>
+                        <li><Link to="/manage/links">Links</Link></li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path="/"><h1>Home</h1></Route>
+                    <Route path="/sign-in"><h1>Sign In</h1></Route>
+                    <Route path="/sign-up"><h1>Sign Up</h1></Route>
+                    <Route path="/manage/links/create"><h1>Create Link</h1></Route>
+                    <Route path="/manage/links/edit"><h1>Edit Link</h1></Route>
+                    <Route path="/manage/links"><h1>Links</h1></Route>
+                </Switch>
+            </div>
+        </BrowserRouter>
+    )
 }
-
 export default App;
