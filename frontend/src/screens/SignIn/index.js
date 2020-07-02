@@ -16,7 +16,7 @@ const SignIn = (props) => {
         })
     };
 
-    console.log('*** SignIn.account', account);
+    //console.log('*** SignIn.account', account);
 
     return (
         <div className="container h-100 pt-5">
