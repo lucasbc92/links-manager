@@ -26,7 +26,7 @@ const Links = ({links, linkList}) => {
             </div>
             {links.map(link => {
                 return (
-                    <div className="pb-2 pt-2 pl-3 pr-3 d-flex flex-row justify-content-between">
+                    <div key={link.id} className="pb-2 pt-2 pl-3 pr-3 d-flex flex-row justify-content-between">
                         <div className="pr-3">
                             <img src={link.image} alt="Link icon" height="100" width="100"/>
                         </div>
