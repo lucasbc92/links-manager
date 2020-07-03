@@ -11,7 +11,7 @@ export default function (state = initialState, action) {
     //console.log('*** SignUpReducer.type', type);
     switch(type) {
         case SIGN_UP:
-            console.log('*** SignUpReducer.payload', payload);
+            //console.log('*** SignUpReducer.payload', payload);
             
             const response = (payload) ? payload.data : null;
             const account = (response) ? response.data : null;
