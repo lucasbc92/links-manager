@@ -15,6 +15,15 @@ export const getHeaders = () => {
     };
 }
 
+export const apiGet = (path) => {
+    const url = getApiUrl(path);
+    const options = {
+        headers: getHeaders(),
+    }
+
+    return axios.get(url, options);
+};
+
 export const apiPost = (path, data = {}) => {
     const url = getApiUrl(path);
     const options = {
@@ -23,3 +32,4 @@ export const apiPost = (path, data = {}) => {
 
     return axios.post(url, data, options);
 };
+

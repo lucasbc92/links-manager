@@ -20,7 +20,9 @@ const Create = ({link, linkCreate}) => {
         linkCreate(data);
     }
 
-
+    if(link) {
+        return <Redirect to='/manage/links'/>
+    }
 
     console.log('*** Create.link', link);
 
