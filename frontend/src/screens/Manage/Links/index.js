@@ -24,7 +24,7 @@ const Links = ({links, linkList}) => {
                     </Link>                
                 </div>
             </div>
-            {links.map(link => {
+            {links && links.length && links.map(link => {
                 return (
                     <div key={link.id} className="pb-2 pt-2 pl-3 pr-3 d-flex flex-row justify-content-between">
                         <div className="pr-3">
@@ -35,7 +35,7 @@ const Links = ({links, linkList}) => {
                             <span className="text-primary clearfix">{link.url}</span>
                         </div>
                         <div className="ml-auto p-2 clearfix">
-                            <span>Edit</span>
+                            <Link to={`/manage/links/edit/${link.id}`}>Edit</Link>
                             <span>Delete</span>
                         </div>
                     </div>
