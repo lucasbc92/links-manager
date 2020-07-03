@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import { signUp } from './SignUpActions';
+import { signUp } from '../../actions/AccountActions';
 
 const SignUp = (props) => {
     const { signUp, account } = props;
@@ -53,7 +53,7 @@ const SignUp = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        account: state.signUp.account,
+        account: state.account.account,
     }
 }
 

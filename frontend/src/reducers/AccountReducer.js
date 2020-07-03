@@ -1,5 +1,12 @@
-import { setAccount, setToken, setRefreshToken } from '../../helpers/account';
-import {SIGN_IN} from './SignInActions';
+import { 
+    setAccount,
+    removeAccount,
+    setToken,
+    removeToken,
+    setRefreshToken,
+    removeRefreshToken
+} from '../helpers/account';
+import { SIGN_IN, SIGN_UP, SIGN_OUT } from '../actions/AccountActions';
 
 const initialState = {
     account: null,
@@ -9,6 +16,7 @@ export default function (state = initialState, action) {
     const {type, payload} = action;
     switch(type) {
         case SIGN_IN:
+        case SIGN_UP:
             //console.log('*** SignUpReducer.payload', payload);
             
             const response = (payload) ? payload.data : null;
@@ -25,8 +33,18 @@ export default function (state = initialState, action) {
             if (refreshToken) setRefreshToken(refreshToken);
 
             return {
-                ...initialState,
+                ...state,
                 account
+            };
+        case SIGN_OUT:
+            
+            removeAccount();
+            removeToken();
+            removeRefreshToken();
+
+            return {
+                ...state,
+                account: null
             };
         default:
             return state;
