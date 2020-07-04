@@ -1,4 +1,11 @@
-import { LINK_LIST, LINK_GET, LINK_CREATE, LINK_UPDATE, LINK_DELETE } from '../actions/LinkActions';
+import { 
+    LINK_LIST, 
+    LINK_GET, 
+    LINK_CREATE,
+    LINK_UPDATE,
+    LINK_TO_DELETE,
+    LINK_DELETE
+} from '../actions/LinkActions';
 
 const initialState = {
     link: null,
@@ -33,8 +40,17 @@ export default function(state = initialState, action) {
             
             return {...state, link};
         }
-        case LINK_DELETE: {
+        case LINK_TO_DELETE: {
             return {...state, linkToDelete: payload};
+        }
+        case LINK_DELETE: {
+            console.log('*** LinkReducer.LINK_DELETE.payload', payload)
+
+            const links = state.links.filter(link => 
+                link.id !== state.linkToDelete.id
+            );
+
+            return {...state, linkToDelete: null, links};
         }
         default: return {...state}
     }
