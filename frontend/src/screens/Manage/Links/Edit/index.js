@@ -20,7 +20,10 @@ const Edit = ({link, linkGet, linkUpdate}) => {
         e.preventDefault();
         const data = getFormData(e);
         linkUpdate(id, data);
+        alert("Link editado!");
     }
+
+    console.log("*** Edit.link", link);
 
     return (
         <Layout>

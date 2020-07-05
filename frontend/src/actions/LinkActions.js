@@ -61,6 +61,6 @@ export const linkDelete = (link) => {
     
     return {
         type: LINK_DELETE,
-        payload: link
+        payload
     }
 }

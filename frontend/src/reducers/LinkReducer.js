@@ -44,7 +44,7 @@ export default function(state = initialState, action) {
             return {...state, linkToDelete: payload};
         }
         case LINK_DELETE: {
-            console.log('*** LinkReducer.LINK_DELETE.payload', payload)
+            //console.log('*** LinkReducer.LINK_DELETE.payload', payload)
 
             const links = state.links.filter(link => 
                 link.id !== state.linkToDelete.id

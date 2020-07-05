@@ -22,6 +22,8 @@ const Links = ({links, linkList, linkToDelete, setLinkToDelete, linkDelete}) => 
         if(linkToDelete) linkDelete(linkToDelete);
     }
 
+    console.log('*** Links.links', links);
+
     return (
         <Layout>
             <div className="row">
@@ -34,7 +36,7 @@ const Links = ({links, linkList, linkToDelete, setLinkToDelete, linkDelete}) => 
                     </Link>                
                 </div>
             </div>
-            {links.map(link => {
+            {links && links.map(link => {
 
                 const deleteLink = (e) => {
                     setLinkToDelete(link);

@@ -2,8 +2,6 @@ import React from 'react';
 
 import Layout from '../../../Layouts/Manage'
 
-import { Redirect } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 import { getFormData } from '../../../../helpers/form';
 
@@ -18,10 +16,6 @@ const Create = ({link, linkCreate}) => {
         //console.log('*** Create.submitHandler.data', data);
 
         linkCreate(data);
-    }
-
-    if(link) {
-        return <Redirect to='/manage/links'/>
     }
 
     //console.log('*** Create.link', link);
