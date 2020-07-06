@@ -7,26 +7,26 @@ TECNOLOGIAS APRENDIDAS:
 
 BACK-END
 
-– ExpressJS
-– Como configurar Sequelize
-– Como criar models
-– Como criptografar e verificar senhas
-– Como autenticar senhas
-– Como criar middleware do express
-– Como padronizar respostas da api
-– Como bloquear requisições não autorizadas
+- ExpressJS
+- Como configurar Sequelize
+- Como criar models
+- Como criptografar e verificar senhas
+- Como autenticar senhas
+- Como criar middleware do express
+- Como padronizar respostas da api
+- Como bloquear requisições não autorizadas
 - CRUD do banco de dados
 
 FRONT-END 
 
-– Criando uma aplicação com Create React App
-– Como implementar Sass na aplicação
-– Como usar bootstrap em uma aplicação react
-– Como usar um kit de Interface de usuários
-– Como consumir uma API com Axios
-– Como configurar Redux
-– Como fazer autenticação com JWT
-– Como manter o usuário sempre conectado (Refresh Token)
+- Criando uma aplicação com Create React App
+- Como implementar Sass na aplicação
+- Como usar bootstrap em uma aplicação react
+- Como usar um kit de Interface de usuários
+- Como consumir uma API com Axios
+- Como configurar Redux
+- Como fazer autenticação com JWT
+- Como manter o usuário sempre conectado (Refresh Token)
 
 #### Se ainda não segue o emersonbroga, conheça as Redes Sociais
 
