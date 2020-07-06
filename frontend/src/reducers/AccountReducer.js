@@ -32,8 +32,8 @@ export default function (state = initialState, action) {
 
             //console.log('*** SignUpReducer.account', account);
 
-            const token = {metadata} ? metadata.token : null;
-            const refreshToken = {metadata} ? metadata.refreshToken : null;
+            const token = metadata ? metadata.token : null;
+            const refreshToken = metadata ? metadata.refreshToken : null;
 
             if (account) setAccount(account);
             if (token) setToken(token);
@@ -69,9 +69,9 @@ export default function (state = initialState, action) {
             const response = (payload) ? payload.data : null;
             const metadata = (response) ? response.metadata : null;
 
-            console.log('*** AccountReducer.REFRESH_TOKEN.metadata', metadata);
+            //console.log('*** AccountReducer.REFRESH_TOKEN.metadata', metadata);
 
-            const token = {metadata} ? metadata.token : null;
+            const token = metadata ? metadata.token : null;
 
             if (token) setToken(token);
             return state;
