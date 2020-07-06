@@ -16,6 +16,7 @@ const Create = ({link, linkCreate}) => {
         //console.log('*** Create.submitHandler.data', data);
 
         linkCreate(data);
+        alert("Link criado!");
     }
 
     //console.log('*** Create.link', link);

@@ -22,7 +22,7 @@ const Links = ({links, linkList, linkToDelete, setLinkToDelete, linkDelete}) => 
         if(linkToDelete) linkDelete(linkToDelete);
     }
 
-    console.log('*** Links.links', links);
+    //console.log('*** Links.links', links);
 
     return (
         <Layout>

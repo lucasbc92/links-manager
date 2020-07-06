@@ -7,7 +7,13 @@ import {
     setRefreshToken,
     removeRefreshToken
 } from '../helpers/account';
-import { SIGN_IN, SIGN_UP, SIGN_OUT, INIT_ACCOUNT } from '../actions/AccountActions';
+import { 
+    SIGN_IN,
+    SIGN_UP,
+    SIGN_OUT,
+    INIT_ACCOUNT,
+    REFRESH_TOKEN
+} from '../actions/AccountActions';
 
 const initialState = {
     account: null,
@@ -57,7 +63,19 @@ export default function (state = initialState, action) {
                 account
             };
         }
+        case REFRESH_TOKEN: {
+            //console.log('*** AccountReducer.REFRESH_TOKEN.payload', payload);
+            
+            const response = (payload) ? payload.data : null;
+            const metadata = (response) ? response.metadata : null;
 
+            console.log('*** AccountReducer.REFRESH_TOKEN.metadata', metadata);
+
+            const token = {metadata} ? metadata.token : null;
+
+            if (token) setToken(token);
+            return state;
+        }
         default:
             return state;
     }

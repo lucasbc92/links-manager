@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { initAccount } from './actions/AccountActions';
 
@@ -21,7 +21,7 @@ const App = ({account, initAccount}) => {
     return (
         <BrowserRouter>
             <div>
-                <nav>
+                {/*<nav>
                     <ul className="list-group list-group-horizontal">
                         <li className="list-group-item">
                             <Link to="/sign-in">Sign In</Link>
@@ -39,7 +39,7 @@ const App = ({account, initAccount}) => {
                             <Link to="/manage/links">Links</Link>
                         </li>
                     </ul>
-                </nav>
+                </nav>*/}
                 <Switch>
                     <Route path="/sign-in">
                         <SignIn />
